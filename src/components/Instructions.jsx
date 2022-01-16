@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
+import { AiOutlineArrowDown } from 'react-icons/ai';
 import '../styles/Instructions.css';
 
 const Instructions = () => {
