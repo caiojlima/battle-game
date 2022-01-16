@@ -24,8 +24,8 @@ const Home = () => {
   }, [state]);
   
   const statsValidation = () => {
-    const conditionPlayerOne = state.atk1 + state.def1 + state.hp1 > 50;
-    const conditionPlayerTwo = state.atk2 + state.def2 + state.hp2 > 50;
+    const conditionPlayerOne = Number(state.atk1) + Number(state.def1) + Number(state.hp1) > 50;
+    const conditionPlayerTwo = Number(state.atk2) + Number(state.def2) + Number(state.hp2) > 50;
     
 
     if ( conditionPlayerOne || conditionPlayerTwo ) {

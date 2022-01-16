@@ -16,3 +16,16 @@ main {
   font-weight: 900;
   font-size: 40px;
 }
+
+.dice-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+}
+
+.dice-container h3 {
+  font-weight: 900;
+  font-size: 30px;
+}
