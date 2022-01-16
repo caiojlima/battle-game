@@ -19,7 +19,7 @@ const Instructions = () => {
       <ul className={ isCollapsed ? 'list' : 'list hide' }>
         <li>Distribua os pontos de personagem da forma que preferir. Quantidade máxima de pontos: 50. Obs: HP não pode ser 0.</li>
         <li>Após o salvamento de um personagem, um preview com os stats definidos aparecerá.</li>
-        <li>O multiplicador de ataque é 0.7 enquanto o de defesa é 1.</li>
+        <li>O multiplicador de ataque é 0.5 enquanto o de defesa é 1.</li>
         <li>Quando dois personagens forem criados, um botão pra iniciar a batalha aparecerá.</li>
       </ul>
     </div>

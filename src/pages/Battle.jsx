@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import BattleContext from '../context/BattleContext.js';
 import PlayerCard from '../components/PlayerCard';
 import Header from "../components/Header";
@@ -11,19 +11,31 @@ const Battle = () => {
 
   const attackingPlayer = () => {
     if(togglePlayer) {
-      const remainingHp = dice + (providerState.atk1 * 0.7) - providerState.def2;
-      setProviderState({ ...providerState, hp2: remainingHp });
+      const attackValue = (dice + (Number(providerState.atk1) * 0.5) - Number(providerState.def2));
+      if(attackValue > 0) {
+        const remainingHp = Number(providerState.hp2) - attackValue;
+        setProviderState({ ...providerState, hp2: remainingHp });
+      }
+      setTogglePlayer(!togglePlayer);
     } else {
-      const remainingHp = dice + (providerState.atk2 * 0.7) - providerState.def1;
-      setProviderState({ ...providerState, hp1: remainingHp });
+      const attackValue = (dice + (Number(providerState.atk2) * 0.5) - Number(providerState.def1));
+      if(attackValue > 0) {
+        const remainingHp = Number(providerState.hp1) - attackValue;
+        setProviderState({ ...providerState, hp1: remainingHp });
+      }
+      setTogglePlayer(!togglePlayer);
     }
   };
+
+  useEffect(() => {
+    if(dice) {
+      attackingPlayer();
+    };
+  }, [dice]);
 
   const diceRoll = () => {
     const diceResult = Math.round((Math.random() * 20) + 1);
     setDice(diceResult);
-    attackingPlayer();
-    setTogglePlayer(!togglePlayer);
   };
 
   return (

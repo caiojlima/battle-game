@@ -12,10 +12,10 @@ const PlayerCard = ({ number, atk, def, hp }) => (
 
 
 PlayerCard.propTypes = {
-  number: PropTypes.number.isRequired,
-  atk: PropTypes.string.isRequired,
-  def: PropTypes.string.isRequired,
-  hp: PropTypes.string.isRequired,
+  number: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  atk: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  def: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  hp: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 };
 
 export default PlayerCard;
