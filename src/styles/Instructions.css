@@ -1,0 +1,66 @@
+.collapsed {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 80%;
+  border: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.collapsed h2 {
+  margin-right: 10px;
+}
+
+.collapsed span {
+  transition: ease 0.5s;
+}
+
+.rotate {
+  transform: rotate(-180deg);
+}
+
+.list {
+  width: 80%;
+  margin-top: 0;
+  border: 1px solid black;
+  border-top: none;
+  list-style: none;
+  animation: showing 1s forwards linear;
+  overflow: hidden;
+}
+.list li {
+  padding: 1px;
+  margin-left: 10px;
+}
+
+.hide {
+  overflow: hidden;
+  animation: hiding 1s forwards linear;
+}
+
+@keyframes hiding {
+  0% {
+    height: 106px;
+  }
+  95% {
+    border: 1px solid black;
+    border-top: none;
+  }
+  100% {
+    height: 0;
+    border: none;
+  }
+}
+
+@keyframes showing {
+  100% {
+    height: 106px;
+  }
+  0% {
+    height: 0;
+    border: 1px solid black;
+    border-top: none;
+  }
+}

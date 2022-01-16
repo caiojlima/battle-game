@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const PlayerStatsPreview = ({ number, atk, def, hp }) => (
   <div>
-    <h3>Personagem {number}:</h3>
-    <p>Ataque: { atk }</p>
-    <p>Defesa: { def }</p>
-    <p>HP: { hp }</p>
+    <h3>Personagem { number }:</h3>
+    <p>Ataque: { parseInt(atk) }</p>
+    <p>Defesa: { parseInt(def) }</p>
+    <p>HP: { parseInt(hp) }</p>
   </div>
  );
 
