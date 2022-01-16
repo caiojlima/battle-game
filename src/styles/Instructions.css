@@ -22,12 +22,15 @@
 }
 
 .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 80%;
   margin-top: 0;
   border: 1px solid black;
   border-top: none;
   list-style: none;
-  animation: showing 1s forwards linear;
+  animation: showing 0.5s forwards linear;
   overflow: hidden;
 }
 .list li {
@@ -37,7 +40,7 @@
 
 .hide {
   overflow: hidden;
-  animation: hiding 1s forwards linear;
+  animation: hiding 0.5s forwards linear;
 }
 
 @keyframes hiding {
@@ -59,8 +62,8 @@
     height: 106px;
   }
   0% {
+  margin-top: 10px;
     height: 0;
-    border: 1px solid black;
     border-top: none;
   }
 }
