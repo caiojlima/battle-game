@@ -2,12 +2,25 @@ import React, { useState, useContext, useEffect } from "react";
 import BattleContext from '../context/BattleContext.js';
 import PlayerCard from '../components/PlayerCard';
 import Header from "../components/Header";
+import Popout from "../components/Popout.jsx";
 import '../styles/Battle.css';
 
 const Battle = () => {
   const [togglePlayer, setTogglePlayer] = useState(true);
   const [dice, setDice] = useState(0);
+  const [winner, setWinner] = useState(0);
   const { providerState, setProviderState } = useContext(BattleContext);
+
+  const winningVerification = () => {
+    const playerTwoWinner = providerState.hp1 <= 0 ? true : false;
+    const playerOneWinner = providerState.hp2 <= 0 ? true : false;
+
+    if (playerOneWinner) {
+      setWinner(1);
+    } else if (playerTwoWinner) {
+      setWinner(2);
+    }
+  };
 
   const attackingPlayer = () => {
     if(togglePlayer) {
@@ -34,6 +47,11 @@ const Battle = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dice, ]);
 
+  useEffect(() => {
+    winningVerification();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [providerState.hp1, providerState.hp2]);
+
   const diceRoll = () => {
     const diceResult = Math.round((Math.random() * 20) + 1);
     setDice(diceResult);
@@ -51,9 +69,10 @@ const Battle = () => {
         </div>
       </main>
       <div className="dice-container">
-        { <h3>{ dice }</h3> }
-        <button type="button" onClick={ diceRoll }>Jogue o Dado!</button>
+        {dice ? <h2>Personagem { !togglePlayer ? '1' : '2' } tirou: { dice }!</h2> : <h2>{ dice }</h2> }
+        <button type="button" onClick={ diceRoll } disabled={ winner }>Jogue o dado!</button>
       </div>
+      { winner && <Popout number={ winner } /> }
     </>
 
   );
