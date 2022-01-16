@@ -1,0 +1,18 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.battle-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.battle-container span {
+  font-weight: 900;
+  font-size: 40px;
+}

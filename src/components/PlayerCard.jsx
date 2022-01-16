@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const PlayerStatsPreview = ({ number, atk, def, hp }) => (
+const PlayerCard = ({ number, atk, def, hp }) => (
   <div>
     <h3>Personagem { number }:</h3>
     <p>Ataque: { parseInt(atk) }</p>
@@ -11,11 +11,11 @@ const PlayerStatsPreview = ({ number, atk, def, hp }) => (
  );
 
 
-PlayerStatsPreview.propTypes = {
+PlayerCard.propTypes = {
   number: PropTypes.number.isRequired,
   atk: PropTypes.string.isRequired,
   def: PropTypes.string.isRequired,
   hp: PropTypes.string.isRequired,
 };
 
-export default PlayerStatsPreview;
+export default PlayerCard;
