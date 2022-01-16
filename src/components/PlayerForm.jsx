@@ -16,7 +16,7 @@ const PlayerForm = ({ player, handleSubmit }) => {
   return (
     <form onSubmit={ (event) => {statsValidation(event, state); clearInput();} }>
       <h2>Personagem{ player }:</h2>
-      <h3>Pontos restantes: { 50 - Number(state[`atk${player}`]) - Number(state[`def${player}`]) - Number(state[`hp${player}`])} </h3>
+      <h3>Pontos restantes: { 50 - Number(state[`atk${player}`]) - Number(state[`def${player}`]) - Number(state[`hp${player}`]) } </h3>
       <label htmlFor="atk">
         Atk do Personagem{ player }
         <input onChange={ handleChange } id={`atk${player}`} type="number" min={ 0 } value={ state[`atk${player}`] } />

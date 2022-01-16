@@ -1,0 +1,14 @@
+.preview-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.start-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50px;
+  text-decoration: none;
+}
