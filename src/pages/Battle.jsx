@@ -31,7 +31,8 @@ const Battle = () => {
     if(dice) {
       attackingPlayer();
     };
-  }, [dice]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dice, ]);
 
   const diceRoll = () => {
     const diceResult = Math.round((Math.random() * 20) + 1);

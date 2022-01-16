@@ -14,7 +14,7 @@ const Instructions = () => {
     <div>
       <div className="collapsed" onClick={ toggleCollapse }>
         <h2>Instruções</h2>
-        <span className={ !!isCollapsed && 'rotate' }><AiOutlineArrowDown /></span>
+        <span className={ isCollapsed ? 'rotate' : '' }><AiOutlineArrowDown /></span>
       </div>
       <ul className={ isCollapsed ? 'list' : 'list hide' }>
         <li>Distribua os pontos de personagem da forma que preferir. Quantidade máxima de pontos: 50. Obs: HP não pode ser 0.</li>
